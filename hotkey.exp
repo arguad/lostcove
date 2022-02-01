@@ -1,0 +1,19 @@
+#!/usr/bin/expect
+
+set walletname [lindex $argv 0]
+set keyname [lindex $argv 1]
+
+set timeout -1
+
+set accum {}
+log_file /root/credentials/btcli_$walletname\_$keyname
+spawn /usr/local/bin/btcli new_hotkey
+expect "Enter wallet name *:"
+send -- "$walletname\r"
+expect "Enter hotkey name *:"
+send -- "$keyname\r"
+expect { 
+ "File * already exists. Overwrite *" { send -- "y\r" }
+}
+
+puts $accum

@@ -1,0 +1,21 @@
+#!/usr/bin/expect
+
+set walletname [lindex $argv 0]
+set password [lindex $argv 1]
+
+set timeout -1
+
+set accum {}
+log_file /root/credentials/btcli_$walletname\_coldkey
+spawn /usr/local/bin/btcli new_coldkey
+expect "Enter wallet name *:"
+send -- "$walletname\r"
+expect "Specify password*:"
+send -- "$password\r"
+expect "Retype your password:"
+send -- "$password\r"
+expect { 
+ "File * already exists. Overwrite *" { send -- "y\r" }
+}
+
+puts $accum
