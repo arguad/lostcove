@@ -54,10 +54,10 @@ EOF
 docker-compose up -d
 npm install pm2 -g
 
-/opt/coldkey.exp $wallet_name $coldkey_pw
+./coldkey.exp $wallet_name $coldkey_pw
 
 for i in 1 2 3 4; do
-  /opt/hotkey.exp $wallet_name hotkey$i-`hostname`
+  ./hotkey.exp $wallet_name hotkey$i-`hostname`
 done
 
 
