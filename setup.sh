@@ -18,8 +18,8 @@ printf '3\r' | update-alternatives --config editor
 #/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/opentensor/bittensor/master/scripts/install.sh)"
 curl -fsSL https://raw.githubusercontent.com/opentensor/bittensor/master/scripts/install.sh -o /opt/bittensor_install.sh
 chmod 755 /opt/bittensor_install.sh
-sed -i 's/wait_for_user()/inactive()/g' bittensor_install.sh
-sed -i 's/wait_for_user/#wait_for_user/g' bittensor_install.sh
+sed -i 's/wait_for_user()/inactive()/g' /opt/bittensor_install.sh
+sed -i 's/wait_for_user/#wait_for_user/g' /opt/bittensor_install.sh
 /bin/bash -c /opt/bittensor_install.sh
 
 git clone https://github.com/opentensor/subtensor.git ~/.bittensor/subtensor
