@@ -24,7 +24,7 @@ sed -i 's/wait_for_user/#wait_for_user/g' /opt/bittensor_install.sh
 
 git clone https://github.com/opentensor/subtensor.git ~/.bittensor/subtensor
 
-cd ~/.bittensor/subtensor
+#cd ~/.bittensor/subtensor
 
 sudo swapoff -a
 sudo dd if=/dev/zero of=/swapfile bs=1G count=$ram_gb
