@@ -54,6 +54,8 @@ EOF
 docker-compose up -d
 npm install pm2 -g
 
+echo $coldkey_pw > /root/credentials/btcli_$walletname\_coldkey-password
+
 ./coldkey.exp $wallet_name $coldkey_pw
 
 for i in 1 2 3 4; do
