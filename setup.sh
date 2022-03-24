@@ -5,7 +5,8 @@ apt upgrade -y
 
 apt install git openssl libssl-dev curl python3-testresources docker-compose nodejs npm htop expect -y
 
-ram_gb=`free -g | grep Mem: | awk '{ print $2 }'`
+#ram_gb=`free -g | grep Mem: | awk '{ print $2 }'`
+ram_gb=`4`
 coldkey_pw=`openssl rand -base64 14`
 wallet_name=bittensor-wallet-`hostname`
 
